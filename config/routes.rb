@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+    resources :orders, only: [:index, :create, :show] do
+    end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
