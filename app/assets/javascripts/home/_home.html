@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h1>Meal ordering coordination system</h1>
+</div>
+<div ng-repeat="order in orders | orderBy : '-created_at' ">
+	<span style="font-size:20px; margin-left:10px;">
+  		{{order.restaurant_name}}
+  		<a href="#/orders/{{order.id}}">meals</a>
+  	</span>
+</div>
+
+<form ng-submit="addOrder()">
+  <input type="text" ng-model="restaurant_name" placeholder="Put down restaurant name"></input>
+  <br>
+  <button type="submit">Start order!</button>
+</form>

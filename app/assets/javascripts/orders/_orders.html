@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>
+    {{order.restaurant_name}}
+  </h3>
+</div>
+
+<div ng-repeat="meal in order.meals">
+  {{meal.name}} - {{meal.price | currency}}
+</div>
+
+<form ng-submit="addMeal()"
+  style="margin-top:30px;">
+  <h3>Add a new post</h3>
+
+  <div class="form-group">
+    <input type="text"
+    class="form-control"
+    placeholder="name"
+    ng-model="name"></input>
+  </div>
+  <div class="form-group">
+    <input type="text"
+    class="form-control"
+    placeholder="price"
+    ng-model="price"></input>
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
