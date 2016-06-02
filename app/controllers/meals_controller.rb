@@ -3,7 +3,7 @@ class MealsController < ApplicationController
 
   def create
     order = Order.find(params[:order_id])
-    meal = order.meals.create(meal_params)
+    meal = order.meals.create(meal_params.merge(user_id: current_user.id))
     respond_with order, meal
   end
 
