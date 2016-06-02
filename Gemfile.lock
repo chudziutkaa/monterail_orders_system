@@ -43,8 +43,10 @@ GEM
     angular_rails_csrf (1.0.4)
       rails (>= 3, < 5)
     arel (6.0.3)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.1.1)
@@ -82,6 +84,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    orm_adapter (0.5.0)
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -153,12 +156,12 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.4)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -171,6 +174,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   angular_rails_csrf
+  bower-rails
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
@@ -182,7 +186,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
-  turbolinks
+  sprockets
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
