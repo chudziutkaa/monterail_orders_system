@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!, only: [ :index, :create, :show ]
+
   def index
     respond_with Order.all
   end

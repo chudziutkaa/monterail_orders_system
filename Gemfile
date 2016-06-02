@@ -28,6 +28,7 @@ gem 'angular-rails-templates'
 gem 'angular_rails_csrf'
 gem 'bower-rails'
 gem 'sprockets'
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
