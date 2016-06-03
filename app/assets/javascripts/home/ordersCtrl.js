@@ -12,4 +12,10 @@ angular.module('ordersApi')
       });
       $scope.restaurant_name = '';
     };
-}]);
+}])
+
+.directive('orderMeals', function(){
+  return {
+    templateUrl: 'orders/_orders.html'
+  }
+});
