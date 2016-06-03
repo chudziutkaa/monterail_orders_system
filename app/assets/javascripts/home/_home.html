@@ -1,15 +1,44 @@
-<div class="page-header">
-  <h1>Meal ordering coordination system</h1>
-</div>
-<div ng-repeat="order in orders | orderBy : '-created_at' ">
-	<span style="font-size:20px; margin-left:10px;">
-  		{{order.restaurant_name}}
-  		<a href="#/orders/{{order.id}}">meals</a>
-  	</span>
-</div>
+  <div class="page-header">
+    <blockquote>
+      {{AssignedDate.now() | date:'yyyy-MM-dd HH:mm:ss'}}
+      <h1 align="center">MEAL ORDERING COORDINATION SYSTEM</h1>
+    </blockquote>
+  </div>
 
-<form ng-submit="addOrder()">
-  <input type="text" ng-model="restaurant_name" placeholder="Put down restaurant name"></input>
-  <br>
-  <button type="submit">Start order!</button>
-</form>
+<div ng-controller="NavCtrl" class="col-md-6 col-md-offset-3">
+  <div ng-show="signedIn()">
+    <div class="row">
+        <form class="form-inline" ng-submit="addOrder()">
+          <div class="form-group">
+            <p class="form-control-static">Soooo... where we order today? :)</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" ng-model="restaurant_name" placeholder="Put down restaurant name">
+          </div>
+          <button type="submit" class="btn btn-default">Start order!</button>
+        </form>
+
+        <h4>History of orders:</h4>
+        <br/>
+
+        <div ng-repeat="order in orders | orderBy:'-created_at'">
+          <span style="font-size:20px; margin-left:10px;">
+            <small>{{order.created_at | date:'yyyy-MMMM-dd'}}</small> 
+            {{order.restaurant_name}}
+          </span>
+          <span>
+            <a href="#/orders/{{order.id}}">Check meals!</a>
+          </span>
+        </div>
+    </div>
+  </div>
+
+  <div ng-hide="signedIn()">
+    <div class="jumbotron">
+      <h1>Hungry?</h1>
+        <p>Click Log in or Register and do what you have to! :)</p>
+        <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Register</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#/login" role="button">Log in</a></p>
+    </div>
+  </div>
+</div>

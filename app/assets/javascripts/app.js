@@ -1,5 +1,12 @@
 angular.module('ordersApi', ['ui.router', 'templates', 'Devise'])
 
+.run(function($rootScope,$interval){
+  $rootScope.AssignedDate = Date;
+    
+  $interval(function(){
+  },1000)
+})
+
 .config([
   '$stateProvider',
   '$urlRouterProvider',
