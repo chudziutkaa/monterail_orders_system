@@ -1,15 +1,15 @@
 <html>
 <head>
   <title>Meal Ordering Coordination System for Monterail</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application'  %>
   <%= csrf_meta_tags %>
 </head>
+
 <body ng-app="ordersApi">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div ui-view></div>
-    <div class="col-md-6 col-md-offset-3" align="center">
+    <div class="col-md-12">
       <div ng-include="'nav/_nav.html'"></div>    
       <ui-view></ui-view>
     </div>
