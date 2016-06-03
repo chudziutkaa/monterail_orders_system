@@ -24,6 +24,12 @@
           <span style="font-size:20px; margin-left:10px;">
             <small>{{order.created_at | date:'yyyy-MMMM-dd'}}</small> 
             {{order.restaurant_name}}
+            <span class="glyphicon glyphicon-ok"
+              ng-click="finalize(order)"></span>
+              <span class="glyphicon glyphicon-road"
+              ng-click="deliver(order)"></span>
+              <span class="glyphicon glyphicon-shopping-cart"
+              ng-click="order(order)"></span>
           </span>
           <span>
             <a href="#/orders/{{order.id}}">Check meals!</a>
